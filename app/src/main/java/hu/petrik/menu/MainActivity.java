@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 SharedPreferences sharedPreferences = getSharedPreferences("Data", Context.MODE_PRIVATE);
+                String seged = sharedPreferences.getString("nev", "Nincs mentve név");
+                Toast.makeText(MainActivity.this, "A neved: " + seged, Toast.LENGTH_SHORT).show();
             }
         });
     }
